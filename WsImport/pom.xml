@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>WDSLImport</groupId>
+    <artifactId>WsImport</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>					
+								<!-- Caminho do arquivo, sera gerado em "target/generate-sources/wsimport" -->			 
+                                <wsdlFile>D:\Dev\Java\WSDL-Generator\WsImport\wsdl.wsdl</wsdlFile>
+                            </wsdlFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun.xml.ws</groupId>
+                        <artifactId>jaxws-tools</artifactId>
+                        <version>2.3.2</version> 
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
